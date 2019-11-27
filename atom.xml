@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>VirgoKid的博客</title>
+  
+  <subtitle>VirgoKid的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://mr666.top/"/>
+  <updated>2019-11-15T13:21:59.831Z</updated>
+  <id>https://mr666.top/</id>
+  
+  <author>
+    <name>VirgoKid</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客开通了</title>
+    <link href="https://mr666.top/2019/10/27/blog-open-source/"/>
+    <id>https://mr666.top/2019/10/27/blog-open-source/</id>
+    <published>2019-10-27T03:41:03.000Z</published>
+    <updated>2019-11-15T13:21:59.831Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;另一个博客&quot;&gt;&lt;a href=&quot;#另一个博客&quot; class=&quot;headerlink&quot; title=&quot;另一个博客&quot;&gt;&lt;/a&gt;另一个博客&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/virgoman&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="https://mr666.top/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="Hexo" scheme="https://mr666.top/tags/Hexo/"/>
+    
+      <category term="Github" scheme="https://mr666.top/tags/Github/"/>
+    
+      <category term="博客" scheme="https://mr666.top/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>

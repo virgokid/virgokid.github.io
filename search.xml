@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>博客开通了</title>
+      <link href="/2019/10/27/blog-open-source/"/>
+      <url>/2019/10/27/blog-open-source/</url>
+      
+        <content type="html"><![CDATA[<h1 id="另一个博客"><a href="#另一个博客" class="headerlink" title="另一个博客"></a>另一个博客</h1><p><a href="https://www.cnblogs.com/virgoman" target="_blank" rel="noopener">博客园</a></p><h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="待更……"><a href="#待更……" class="headerlink" title="待更……"></a>待更……</h2><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂谈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Github </tag>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
