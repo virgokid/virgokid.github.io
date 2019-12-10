@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mr666.top/"/>
-  <updated>2019-12-10T14:46:53.749Z</updated>
+  <updated>2019-12-10T15:52:44.040Z</updated>
   <id>https://mr666.top/</id>
   
   <author>
@@ -15,6 +15,151 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Spring</title>
+    <link href="https://mr666.top/2019/11/04/guan-yu-spring/"/>
+    <id>https://mr666.top/2019/11/04/guan-yu-spring/</id>
+    <published>2019-11-04T02:13:45.000Z</published>
+    <updated>2019-12-10T15:52:44.040Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这篇文章主要是想通过一些问题，加深大家对于 Spring 的理解，所以不会涉及太多的代码！这篇文章整理了挺长时间，下面的很多问题我自己在使用 Spring 的过程中也并没有注意，自己也是临时查阅了很多资料和书籍补上的。网上也有一些很多关于 Spring
+        
+      
+    
+    </summary>
+    
+      <category term="转载" scheme="https://mr666.top/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="Java" scheme="https://mr666.top/tags/Java/"/>
+    
+      <category term="Spring" scheme="https://mr666.top/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring用到的设计模式</title>
+    <link href="https://mr666.top/2019/11/03/spring-yong-dao-de-she-ji-mo-shi/"/>
+    <id>https://mr666.top/2019/11/03/spring-yong-dao-de-she-ji-mo-shi/</id>
+    <published>2019-11-03T03:35:16.000Z</published>
+    <updated>2019-12-10T15:44:28.830Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Design Patterns(设计模式) 表示面向对象软件开发中最好的计算机编程实践。 Spring 框架中广泛使用了不同类型的设计模式，下面我们来看看到底有哪些设计模式?&lt;/p&gt;
+&lt;h2 id=&quot;控制反转-IoC-和依赖注入-DI&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="转载" scheme="https://mr666.top/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="Java" scheme="https://mr666.top/tags/Java/"/>
+    
+      <category term="Spring" scheme="https://mr666.top/tags/Spring/"/>
+    
+      <category term="设计模式" scheme="https://mr666.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring MVC工作原理</title>
+    <link href="https://mr666.top/2019/11/01/spring-mvc-gong-zuo-yuan-li/"/>
+    <id>https://mr666.top/2019/11/01/spring-mvc-gong-zuo-yuan-li/</id>
+    <published>2019-11-01T11:31:13.000Z</published>
+    <updated>2019-12-10T15:41:13.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;先来看一下什么是-MVC-模式&quot;&gt;&lt;a href=&quot;#先来看一下什么是-MVC-模式&quot; class=&quot;headerlink&quot; title=&quot;先来看一下什么是 MVC 模式&quot;&gt;&lt;/a&gt;先来看一下什么是 MVC 模式&lt;/h3&gt;&lt;p&gt;MVC
+        
+      
+    
+    </summary>
+    
+      <category term="转载" scheme="https://mr666.top/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="Java" scheme="https://mr666.top/tags/Java/"/>
+    
+      <category term="Spring MVC" scheme="https://mr666.top/tags/Spring-MVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 基础知识</title>
+    <link href="https://mr666.top/2019/11/01/linux-ji-chu/"/>
+    <id>https://mr666.top/2019/11/01/linux-ji-chu/</id>
+    <published>2019-11-01T08:42:43.000Z</published>
+    <updated>2019-12-10T15:40:14.077Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;推荐一个Github开源的Linux学习指南(Java工程师向)：&lt;a href=&quot;https://github.com/judasn/Linux-Tutorial&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="转载" scheme="https://mr666.top/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="linux" scheme="https://mr666.top/tags/linux/"/>
+    
+      <category term="操作系统" scheme="https://mr666.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM GC调优</title>
+    <link href="https://mr666.top/2019/10/30/jvm-gc-diao-you/"/>
+    <id>https://mr666.top/2019/10/30/jvm-gc-diao-you/</id>
+    <published>2019-10-30T07:22:03.000Z</published>
+    <updated>2019-12-10T15:34:53.630Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;JVM-配置常用参数&quot;&gt;&lt;a href=&quot;#JVM-配置常用参数&quot; class=&quot;headerlink&quot; title=&quot;JVM 配置常用参数&quot;&gt;&lt;/a&gt;JVM
+        
+      
+    
+    </summary>
+    
+      <category term="转载" scheme="https://mr666.top/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="JVM" scheme="https://mr666.top/tags/JVM/"/>
+    
+      <category term="GC" scheme="https://mr666.top/tags/GC/"/>
+    
+      <category term="Java" scheme="https://mr666.top/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>BIO,NIO,AIO总结</title>
@@ -38,9 +183,9 @@
       <category term="转载" scheme="https://mr666.top/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="IO" scheme="https://mr666.top/tags/IO/"/>
-    
       <category term="Java" scheme="https://mr666.top/tags/Java/"/>
+    
+      <category term="IO" scheme="https://mr666.top/tags/IO/"/>
     
   </entry>
   

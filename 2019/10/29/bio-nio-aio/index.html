@@ -734,12 +734,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/IO/" target="_blank">
-                                <span class="chip bg-color">IO</span>
-                            </a>
-                        
                             <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/IO/" target="_blank">
+                                <span class="chip bg-color">IO</span>
                             </a>
                         
                     </div>
@@ -1516,30 +1516,37 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/29/bio-nio-aio/">
+                <a href="/2019/10/30/jvm-gc-diao-you/">
                     <div class="card-image">
                         
                         
-                        <img src="http://image.mr666.top/images/1%20%2818%29.jpg" class="responsive-img" alt="BIO,NIO,AIO总结">
+                        <img src="http://image.mr666.top/images/1%20%2835%29.jpg" class="responsive-img" alt="JVM GC调优">
                         
-                        <span class="card-title">BIO,NIO,AIO总结</span>
+                        <span class="card-title">JVM GC调优</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            BIO,NIO,AIO 总结 Java 中的 BIO、NIO和 AIO 理解为是 Java 语言对操作系统的各种 IO 模型的封装。程序员在使用这些 API 的时候，不需要关心操作系统层面的知识，也不需要根据不同操作系统编写不同的代码。只需
+                            JVM 配置常用参数
+堆参数；
+回收器参数；
+项目中常用配置；
+常用组合；
+
+堆参数
+回收器参数
+如上表所示，目前主要有串行、并行和并发三种，对于大内存的应用而言，串行的性能太低，因此使用到的主要是并行和并发两种。并行和并发 GC 的策略通
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-30
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1552,12 +1559,15 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IO/" target="_blank">
-                        <span class="chip bg-color">IO</span>
+                    <a href="/tags/JVM/" target="_blank">
+                        <span class="chip bg-color">JVM</span>
+                    </a>
+                    
+                    <a href="/tags/GC/" target="_blank">
+                        <span class="chip bg-color">GC</span>
                     </a>
                     
                     <a href="/tags/Java/" target="_blank">
@@ -1792,7 +1802,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">4.3k</span> 字
+                <span class="white-color">21.4k</span> 字
             
 
             
