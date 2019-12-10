@@ -130,11 +130,11 @@
       
         <tags>
             
+            <tag> Java </tag>
+            
             <tag> JVM </tag>
             
             <tag> GC </tag>
-            
-            <tag> Java </tag>
             
         </tags>
       
@@ -159,9 +159,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> IO </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
