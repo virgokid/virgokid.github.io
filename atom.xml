@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mr666.top/"/>
-  <updated>2019-11-15T13:21:59.831Z</updated>
+  <updated>2019-12-10T14:46:53.749Z</updated>
   <id>https://mr666.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BIO,NIO,AIO总结</title>
+    <link href="https://mr666.top/2019/10/29/bio-nio-aio/"/>
+    <id>https://mr666.top/2019/10/29/bio-nio-aio/</id>
+    <published>2019-10-29T04:42:01.000Z</published>
+    <updated>2019-12-10T14:46:53.749Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;BIO-NIO-AIO-总结&quot;&gt;&lt;a href=&quot;#BIO-NIO-AIO-总结&quot; class=&quot;headerlink&quot; title=&quot;BIO,NIO,AIO 总结&quot;&gt;&lt;/a&gt;BIO,NIO,AIO 总结&lt;/h1&gt;&lt;p&gt; Java 中的 BIO、NIO和 AIO
+        
+      
+    
+    </summary>
+    
+      <category term="转载" scheme="https://mr666.top/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="IO" scheme="https://mr666.top/tags/IO/"/>
+    
+      <category term="Java" scheme="https://mr666.top/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>博客开通了</title>
