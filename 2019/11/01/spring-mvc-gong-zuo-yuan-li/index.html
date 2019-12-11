@@ -674,7 +674,7 @@ SpringMVC 简单介绍SpringMVC 框架是以请求为驱动，围绕 Servlet 设
             <div id="articleContent">
                 <h3 id="先来看一下什么是-MVC-模式"><a href="#先来看一下什么是-MVC-模式" class="headerlink" title="先来看一下什么是 MVC 模式"></a>先来看一下什么是 MVC 模式</h3><p>MVC 是一种设计模式.</p>
 <p><strong>MVC 的原理图如下：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/60679444.jpg" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/60679444.jpg" alt=""></p>
 <h3 id="SpringMVC-简单介绍"><a href="#SpringMVC-简单介绍" class="headerlink" title="SpringMVC 简单介绍"></a>SpringMVC 简单介绍</h3><p>SpringMVC 框架是以请求为驱动，围绕 Servlet 设计，将请求发给控制器，然后通过模型对象，分派器来展示请求结果视图。其中核心类是 DispatcherServlet，它是一个 Servlet，顶层是实现的Servlet接口。</p>
 <h3 id="SpringMVC-使用"><a href="#SpringMVC-使用" class="headerlink" title="SpringMVC 使用"></a>SpringMVC 使用</h3><p>需要在 web.xml 中配置 DispatcherServlet 。并且需要配置 Spring 监听器ContextLoaderListener</p>
 <pre class="line-numbers language-xml"><code class="language-xml">
@@ -700,7 +700,7 @@ SpringMVC 简单介绍SpringMVC 框架是以请求为驱动，围绕 Servlet 设
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="SpringMVC-工作原理（重要）"><a href="#SpringMVC-工作原理（重要）" class="headerlink" title="SpringMVC 工作原理（重要）"></a>SpringMVC 工作原理（重要）</h3><p><strong>简单来说：</strong></p>
 <p>客户端发送请求-&gt; 前端控制器 DispatcherServlet 接受客户端请求 -&gt; 找到处理器映射 HandlerMapping 解析请求对应的 Handler-&gt; HandlerAdapter 会根据 Handler 来调用真正的处理器开处理请求，并处理相应的业务逻辑 -&gt; 处理器返回一个模型视图 ModelAndView -&gt; 视图解析器进行解析 -&gt; 返回一个视图对象-&gt;前端控制器 DispatcherServlet 渲染数据（Moder）-&gt;将得到视图对象返回给用户</p>
-<p><strong>如下图所示：</strong><br><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/49790288.jpg" alt="SpringMVC运行原理"></p>
+<p><strong>如下图所示：</strong><br><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/49790288.jpg" alt="SpringMVC运行原理"></p>
 <p>上图的一个笔误的小问题：Spring MVC 的入口函数也就是前端控制器 DispatcherServlet 的作用是接收请求，响应结果。</p>
 <p><strong>流程说明（重要）：</strong></p>
 <p>（1）客户端（浏览器）发送请求，直接请求到 DispatcherServlet。</p>
@@ -841,25 +841,25 @@ SpringMVC 简单介绍SpringMVC 框架是以请求为驱动，围绕 Servlet 设
 </ul>
 <p>在Web MVC框架中，每个DispatcherServlet都拥自己的WebApplicationContext，它继承了ApplicationContext。WebApplicationContext包含了其上下文和Servlet实例之间共享的所有的基础框架beans。</p>
 <p><strong>HandlerMapping</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/96666164.jpg" alt="HandlerMapping"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/96666164.jpg" alt="HandlerMapping"></p>
 <p>HandlerMapping接口处理请求的映射HandlerMapping接口的实现类：</p>
 <ul>
 <li>SimpleUrlHandlerMapping类通过配置文件把URL映射到Controller类。</li>
 <li>DefaultAnnotationHandlerMapping类通过注解把URL映射到Controller类。</li>
 </ul>
 <p><strong>HandlerAdapter</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/91433100.jpg" alt="HandlerAdapter"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/91433100.jpg" alt="HandlerAdapter"></p>
 <p>HandlerAdapter接口-处理请求映射</p>
 <p>AnnotationMethodHandlerAdapter：通过注解，把请求URL映射到Controller类的方法上。</p>
 <p><strong>HandlerExceptionResolver</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/50343885.jpg" alt="HandlerExceptionResolver"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/50343885.jpg" alt="HandlerExceptionResolver"></p>
 <p>HandlerExceptionResolver接口-异常处理接口</p>
 <ul>
 <li>SimpleMappingExceptionResolver通过配置文件进行异常处理。</li>
 <li>AnnotationMethodHandlerExceptionResolver：通过注解进行异常处理。</li>
 </ul>
 <p><strong>ViewResolver</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/49497279.jpg" alt="ViewResolver"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/49497279.jpg" alt="ViewResolver"></p>
 <p>ViewResolver接口解析View视图。</p>
 <p>UrlBasedViewResolver类 通过配置文件，把一个视图名交给到一个View来处理。</p>
 <script>

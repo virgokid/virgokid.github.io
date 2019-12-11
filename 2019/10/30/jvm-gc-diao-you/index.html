@@ -700,16 +700,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/" target="_blank">
-                                <span class="chip bg-color">Java</span>
-                            </a>
-                        
                             <a href="/tags/JVM/" target="_blank">
                                 <span class="chip bg-color">JVM</span>
                             </a>
                         
                             <a href="/tags/GC/" target="_blank">
                                 <span class="chip bg-color">GC</span>
+                            </a>
+                        
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -776,14 +776,14 @@
 <li>项目中常用配置；</li>
 <li>常用组合；</li>
 </ol>
-<h3 id="堆参数"><a href="#堆参数" class="headerlink" title="堆参数"></a>堆参数</h3><p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://ask.qcloudimg.com/http-save/yehe-1130324/975rk4d0wx.jpeg?imageView2/2/w/1620" alt="img"></p>
-<h3 id="回收器参数"><a href="#回收器参数" class="headerlink" title="回收器参数"></a>回收器参数</h3><p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://ask.qcloudimg.com/http-save/yehe-1130324/34nzellt71.jpeg?imageView2/2/w/1620" alt="img"></p>
+<h3 id="堆参数"><a href="#堆参数" class="headerlink" title="堆参数"></a>堆参数</h3><p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="https://ask.qcloudimg.com/http-save/yehe-1130324/975rk4d0wx.jpeg?imageView2/2/w/1620" alt="img"></p>
+<h3 id="回收器参数"><a href="#回收器参数" class="headerlink" title="回收器参数"></a>回收器参数</h3><p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="https://ask.qcloudimg.com/http-save/yehe-1130324/34nzellt71.jpeg?imageView2/2/w/1620" alt="img"></p>
 <p>如上表所示，目前<strong>主要有串行、并行和并发三种</strong>，对于大内存的应用而言，串行的性能太低，因此使用到的主要是并行和并发两种。并行和并发 GC 的策略通过 <code>UseParallelGC</code>和<code>UseConcMarkSweepGC</code> 来指定，还有一些细节的配置参数用来配置策略的执行方式。例如：<code>XX:ParallelGCThreads</code>， <code>XX:CMSInitiatingOccupancyFraction</code> 等。 通常：Young 区对象回收只可选择并行（耗时间），Old 区选择并发（耗 CPU）。</p>
 <h3 id="项目中常用配置"><a href="#项目中常用配置" class="headerlink" title="项目中常用配置"></a>项目中常用配置</h3><blockquote>
 <p>备注：在Java8中永久代的参数<code>-XX:PermSize</code> 和<code>-XX：MaxPermSize</code>已经失效。</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://ask.qcloudimg.com/http-save/yehe-1130324/urw285pczz.jpeg?imageView2/2/w/1620" alt="img"></p>
-<h3 id="常用组合"><a href="#常用组合" class="headerlink" title="常用组合"></a>常用组合</h3><p><img src="https://cdn.jsdelivr.net/gh/virgokid/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://ask.qcloudimg.com/http-save/yehe-1130324/ff8ues5crb.jpeg?imageView2/2/w/1620" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="https://ask.qcloudimg.com/http-save/yehe-1130324/urw285pczz.jpeg?imageView2/2/w/1620" alt="img"></p>
+<h3 id="常用组合"><a href="#常用组合" class="headerlink" title="常用组合"></a>常用组合</h3><p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="https://ask.qcloudimg.com/http-save/yehe-1130324/ff8ues5crb.jpeg?imageView2/2/w/1620" alt="img"></p>
 <h2 id="常用-GC-调优策略"><a href="#常用-GC-调优策略" class="headerlink" title="常用 GC 调优策略"></a>常用 GC 调优策略</h2><ol>
 <li>GC 调优原则；</li>
 <li>GC 调优目的；</li>
@@ -1109,12 +1109,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IO/" target="_blank">
-                        <span class="chip bg-color">IO</span>
-                    </a>
-                    
                     <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/IO/" target="_blank">
+                        <span class="chip bg-color">IO</span>
                     </a>
                     
                 </div>
