@@ -774,14 +774,14 @@
 <p>举个生活中简单的例子，你妈妈让你烧水，小时候你比较笨啊，在那里傻等着水开（<strong>同步阻塞</strong>）。等你稍微再长大一点，你知道每次烧水的空隙可以去干点其他事，然后只需要时不时来看看水开了没有（<strong>同步非阻塞</strong>）。后来，你们家用上了水开了会发出声音的壶，这样你就只需要听到响声后就知道水开了，在这期间你可以随便干自己的事情，你需要去倒水了（<strong>异步非阻塞</strong>）。</p>
 <h2 id="1-BIO-Blocking-I-O"><a href="#1-BIO-Blocking-I-O" class="headerlink" title="1. BIO (Blocking I/O)"></a>1. BIO (Blocking I/O)</h2><p>同步阻塞I/O模式，数据的读取写入必须阻塞在一个线程内等待其完成。</p>
 <h3 id="1-1-传统-BIO"><a href="#1-1-传统-BIO" class="headerlink" title="1.1 传统 BIO"></a>1.1 传统 BIO</h3><p>BIO通信（一请求一应答）模型图如下(图源网络，原出处不明)：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="BIO-NIO-AIO/2.png" alt="传统BIO通信模型图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="2.png" alt="传统BIO通信模型图"></p>
 <p>采用 <strong>BIO 通信模型</strong> 的服务端，通常由一个独立的 Acceptor 线程负责监听客户端的连接。我们一般通过在<code>while(true)</code> 循环中服务端会调用 <code>accept()</code> 方法等待接收客户端的连接的方式监听请求，请求一旦接收到一个连接请求，就可以建立通信套接字在这个通信套接字上进行读写操作，此时不能再接收其他客户端连接请求，只能等待同当前连接的客户端的操作执行完成， 不过可以通过多线程来支持多个客户端的连接，如上图所示。</p>
 <p>如果要让 <strong>BIO 通信模型</strong> 能够同时处理多个客户端请求，就必须使用多线程（主要原因是<code>socket.accept()</code>、<code>socket.read()</code>、<code>socket.write()</code> 涉及的三个主要函数都是同步阻塞的），也就是说它在接收到客户端连接请求之后为每个客户端创建一个新的线程进行链路处理，处理完成之后，通过输出流返回应答给客户端，线程销毁。这就是典型的 <strong>一请求一应答通信模型</strong> 。我们可以设想一下如果这个连接不做任何事情的话就会造成不必要的线程开销，不过可以通过 <strong>线程池机制</strong> 改善，线程池还可以让线程的创建和回收成本相对较低。使用<code>FixedThreadPool</code> 可以有效的控制了线程的最大数量，保证了系统有限的资源的控制，实现了N(客户端请求数量):M(处理客户端请求的线程数量)的伪异步I/O模型（N 可以远远大于 M），下面一节”伪异步 BIO”中会详细介绍到。</p>
 <p><strong>我们再设想一下当客户端并发访问量增加后这种模型会出现什么问题？</strong></p>
 <p>在 Java 虚拟机中，线程是宝贵的资源，线程的创建和销毁成本很高，除此之外，线程的切换成本也是很高的。尤其在 Linux 这样的操作系统中，线程本质上就是一个进程，创建和销毁线程都是重量级的系统函数。如果并发访问量增加会导致线程数急剧膨胀可能会导致线程堆栈溢出、创建新线程失败等问题，最终导致进程宕机或者僵死，不能对外提供服务。</p>
 <h3 id="1-2-伪异步-IO"><a href="#1-2-伪异步-IO" class="headerlink" title="1.2 伪异步 IO"></a>1.2 伪异步 IO</h3><p>为了解决同步阻塞I/O面临的一个链路需要一个线程处理的问题，后来有人对它的线程模型进行了优化一一一后端通过一个线程池来处理多个客户端的请求接入，形成客户端个数M：线程池最大线程数N的比例关系，其中M可以远远大于N.通过线程池可以灵活地调配线程资源，设置线程的最大值，防止由于海量并发接入导致线程耗尽。</p>
 <p>伪异步IO模型图(图源网络，原出处不明)：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="BIO-NIO-AIO/3.png" alt="伪异步IO模型图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="3.png" alt="伪异步IO模型图"></p>
 <p>采用线程池和任务队列可以实现一种叫做伪异步的 I/O 通信框架，它的模型图如上图所示。当有新的客户端接入时，将客户端的 Socket 封装成一个Task（该任务实现java.lang.Runnable接口）投递到后端的线程池中进行处理，JDK 的线程池维护一个消息队列和 N 个活跃线程，对消息队列中的任务进行处理。由于线程池可以设置消息队列的大小和最大线程数，因此，它的资源占用是可控的，无论多少个客户端并发访问，都不会导致资源的耗尽和宕机。</p>
 <p>伪异步I/O通信框架采用了线程池实现，因此避免了为每个请求都创建一个独立线程造成的线程资源耗尽问题。不过因为它的底层仍然是同步阻塞的BIO模型，因此无法从根本上解决问题。</p>
 <h3 id="1-3-代码示例"><a href="#1-3-代码示例" class="headerlink" title="1.3 代码示例"></a>1.3 代码示例</h3><p>下面代码中演示了BIO通信（一请求一应答）模型。我们会在客户端创建多个线程依次连接服务端并向其发送”当前时间+:hello world”，服务端会为每个客户端线程创建一个线程来处理。代码示例出自闪电侠的博客，原地址如下：        </p>
@@ -872,14 +872,14 @@
 <p>通道是双向的，可读也可写，而流的读写是单向的。无论读写，通道只能和Buffer交互。因为 Buffer，通道可以异步地读写。</p>
 <h4 id="4-Selector-选择器"><a href="#4-Selector-选择器" class="headerlink" title="4)Selector (选择器)"></a>4)Selector (选择器)</h4><p>NIO有选择器，而IO没有。</p>
 <p>选择器用于使用单个线程处理多个通道。因此，它需要较少的线程来处理这些通道。线程之间的切换对于操作系统来说是昂贵的。 因此，为了提高系统效率选择器是有用的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="BIO-NIO-AIO/Slector.png" alt="一个单线程中Selector维护3个Channel的示意图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="Slector.png" alt="一个单线程中Selector维护3个Channel的示意图"></p>
 <h3 id="2-3-NIO-读数据和写数据方式"><a href="#2-3-NIO-读数据和写数据方式" class="headerlink" title="2.3  NIO 读数据和写数据方式"></a>2.3  NIO 读数据和写数据方式</h3><p>通常来说NIO中的所有IO都是从 Channel（通道） 开始的。</p>
 <ul>
 <li>从通道进行数据读取 ：创建一个缓冲区，然后请求通道读取数据。</li>
 <li>从通道进行数据写入 ：创建一个缓冲区，填充数据，并要求通道写入数据。</li>
 </ul>
 <p>数据读取和写入操作图示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="BIO-NIO-AIO/NIO%E8%AF%BB%E5%86%99%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F.png" alt="NIO读写数据的方式"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imstarstar/cdn@v1.0/loading-spinning-bubbles.svg" data-original="NIO%E8%AF%BB%E5%86%99%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F.png" alt="NIO读写数据的方式"></p>
 <h3 id="2-4-NIO核心组件简单介绍"><a href="#2-4-NIO核心组件简单介绍" class="headerlink" title="2.4 NIO核心组件简单介绍"></a>2.4 NIO核心组件简单介绍</h3><p>NIO 包含下面几个核心的组件：</p>
 <ul>
 <li>Channel(通道)</li>
